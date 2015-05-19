@@ -1,0 +1,18 @@
+ header:
+   { channel: 'event_',
+     type: 'pushEvent',
+     from: 'system',
+     fromConnection: 'system' },
+  originalMsg:
+   { header:
+      { type: 'pubsub',
+        timestamp: 1432068449650,
+        from: 'sendingEndpoint',
+        fromConnection: '8365574C-22E1-4D09-8E8A-57B8EB2C75B4',
+        channel: 'PushEvent',
+        requestId: 'f89463fd-8bc2-4ef5-b1ea-9a69979a2f2f' },
+     message: 'This is a test' },
+  pushTokenId: 'push_0f77dfac-2610-41b5-898a-662cae7abb29',
+  endpointId: 'receivingEndpoint',
+  appId: '3fd9c679-203c-4bdf-96e8-3653a326b59c',
+  time: 1432068449 }

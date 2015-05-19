@@ -1,0 +1,19 @@
+{
+  "name": "sample-push-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A sample server for receiving webhook events from Respoke and responding to push notification events",
+  "main": "index.js",
+  "repository": "https://github.com/chadxz/sample-push-server",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Chad McElligott <cmcelligott@digium.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "joi": "^6.4.1",
+    "request": "^2.55.0"
+  }
+}

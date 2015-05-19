@@ -1,0 +1,18 @@
+{
+  "name": "Respoke Sample Push Server",
+  "description": "A sample server for receiving webhook events from Respoke and responding to push notification events",
+  "keywords": [ "Respoke" ],
+  "website": "https://www.respoke.io",
+  "repository": "https://github.com/chadxz/sample-push-server",
+  "logo": "http://community.respoke.io/uploads/db2818/10/2f9b5ce409f806e0.png",
+  "env": {
+    "APP_ID": {
+      "description": "The id of the Respoke application you want to handle push notifications for.",
+      "value": ""
+    },
+    "APP_SECRET": {
+      "description": "The Respoke application secret for the app you want to .",
+      "value": ""
+    }
+  }
+}
