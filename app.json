@@ -11,7 +11,7 @@
       "value": ""
     },
     "APP_SECRET": {
-      "description": "The Respoke application secret for the app you want to .",
+      "description": "The Respoke application secret for the app you want to handle push notifications for.",
       "value": ""
     }
   }
