@@ -32,8 +32,9 @@ modifying the text of the push message prior to sending.
  1. deploy this application somewhere, specifying the APP_SECRET environment variable using the value provided
  in the [Respoke Developer Console][]
  2. configure your application to post webhook events to the url where the application is deployed
- 3. connect a mobile client to the application, have it register for push notifications, then disconnect it
- 4. send the mobile client's endpointId a **direct** message
+ 3. enable push events for "1:1 message" notifications
+ 4. connect a mobile client to the application, have it register for push notifications, then disconnect it
+ 5. send the mobile client's endpointId a **direct** message
 
 If all goes well, you should see a push notification with a '🎯' prepended to it!
 
