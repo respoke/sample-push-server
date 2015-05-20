@@ -6,14 +6,18 @@ var pushEventSchema = Joi.object().keys({
     type: Joi.string().valid('pushEvent')
   }),
   originalMsg: Joi.object().keys({
-    message: Joi.string(),
     header: Joi.object().keys({
       type: Joi.string(),
       channel: Joi.string().optional()
         .when('type', { is: 'pubsub', then: Joi.required() })
-    })
+    }),
+    message: Joi.string().optional()
+      .when('header.type', { is: 'pubsub', then: Joi.required() }),
+    body: Joi.string().optional()
+      .when('header.type', { is: ['message', 'signal'], then: Joi.required() })
   }),
-  pushTokenId: Joi.string()
+  pushNotificationId: Joi.string(),
+  config: Joi.object()
 });
 
 /**

@@ -4,6 +4,14 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var validations = require('./validations');
 
+function parseMessage(message) {
+  try {
+    return JSON.parse(message);
+  } catch (e) {
+    return null;
+  }
+}
+
 var config = {
   appId: process.env.APP_ID,
   appSecret: process.env.APP_SECRET,
@@ -33,14 +41,27 @@ app.post('/', function (req, res) {
     return;
   }
 
-  // customize the original message
+  // only process group messages
+  if (event.originalMsg.header.type !== 'pubsub') {
+    return;
+  }
+
+  // retrieve the original message
   var message = event.originalMsg.message;
-  message = '🎯 ' + message;
+
+  if (event.config.msgProperty) {
+    message = parseMessage(message);
+    message = _.get(message, event.config.msgProperty) || '';
+  }
+
+  // customize the original message
+  var bullsEyeEmoji = '🎯';
+  message =  bullsEyeEmoji + ' ' + message;
 
   // dispatch the push notification
   var requestOptions = {
     method: 'POST',
-    url: 'https://api-int.respoke.io/v1/push-notification/' + encodeURIComponent(event.pushTokenId),
+    url: 'https://api-int.respoke.io/v1/push-notification/' + encodeURIComponent(event.pushNotificationId),
     headers: {
       'App-Secret': config.appSecret
     },
