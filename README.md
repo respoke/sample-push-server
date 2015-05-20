@@ -35,7 +35,7 @@ modifying the text of the push message prior to sending.
  3. connect a mobile client to the application, have it register for push notifications, then disconnect it
  4. send the mobile client's endpointId a **direct** message
 
-If all goes well, you should see a push notification with a '🎯' appended to it!
+If all goes well, you should see a push notification with a '🎯' prepended to it!
 
 ## License
 [MIT](LICENSE)
