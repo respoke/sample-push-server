@@ -40,13 +40,13 @@ app.post('/', function (req, res) {
     return;
   }
 
-  // only process group messages
-  if (event.originalMsg.header.type !== 'pubsub') {
+  // only process direct messages
+  if (event.originalMsg.header.type !== 'message') {
     return;
   }
 
   // retrieve the original message
-  var message = event.originalMsg.message;
+  var message = event.originalMsg.body;
 
   if (event.config.msgProperty) {
     message = parseMessage(message);

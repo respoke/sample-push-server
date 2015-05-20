@@ -4,7 +4,13 @@
   "private": true,
   "description": "A sample server for receiving webhook events from Respoke and responding to push notification events",
   "main": "index.js",
-  "repository": "https://github.com/chadxz/sample-push-server",
+  "keywords": [
+    "respoke"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chadxz/sample-push-server"
+  },
   "scripts": {
     "start": "node index.js"
   },
