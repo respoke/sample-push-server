@@ -13,13 +13,12 @@ function parseMessage(message) {
 }
 
 var config = {
-  appId: process.env.APP_ID,
   appSecret: process.env.APP_SECRET,
   port: process.env.PORT || 8080
 };
 
-if (!config.appId || !config.appSecret) {
-  throw new Error('APP_ID and APP_SECRET environment variables are required. See project README for details.');
+if (!config.appSecret) {
+  throw new Error('APP_SECRET environment variable is required. See project README for details.');
 }
 
 var app = express();

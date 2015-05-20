@@ -16,7 +16,7 @@ This specific example server demonstrates how you might dispatch push notificati
 the text of the push message prior to sending.
 
 ##Setup
- 1. deploy this application somewhere, specifying the APP_ID and APP_SECRET environment variables using the secrets provided
+ 1. deploy this application somewhere, specifying the APP_SECRET environment variables using the secrets provided
  in the [Respoke Developer Console](https://portal.respoke.io)
  2. configure your application to post webhook events to the url where the application is deployed
  3. connect a mobile client to the application, have it register for push notifications, then disconnect it
