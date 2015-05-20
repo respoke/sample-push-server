@@ -3,6 +3,7 @@ var request = require('request');
 var express = require('express');
 var bodyParser = require('body-parser');
 var validations = require('./validations');
+var _ = require('lodash');
 
 function parseMessage(message) {
   try {
