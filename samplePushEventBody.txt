@@ -18,7 +18,7 @@
      sound: "ping.aiff",
      category: "default",
      msgProperty: "text",
-     sendPushEvent: false,
+     sendPushEvent: true,
      rules:
       { requireNoActiveConnection: false,
         requireOwnEndpointInMessage: false } },
