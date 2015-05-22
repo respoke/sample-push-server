@@ -71,6 +71,10 @@ app.post('/', function (req, res) {
     }
   };
 
+  if (event.cacheId) {
+    requestOptions.json.cacheId = event.cacheId;
+  }
+
   request(requestOptions, function (err, response) {
     if (err) {
       console.error('error sending push notification:', err);
