@@ -49,19 +49,25 @@ app.post('/', function (req, res) {
   // retrieve the original message
   var message = event.originalMsg.body;
 
+  // extract the message from an object if defined in the config
   if (event.config.msgProperty) {
     message = parseMessage(message);
     message = _.get(message, event.config.msgProperty) || '';
+  }
+
+  // only proceed if the message is valid
+  if (!message) {
+    return;
   }
 
   // customize the original message
   var bullsEyeEmoji = '🎯';
   message =  bullsEyeEmoji + ' ' + message;
 
-  // dispatch the push notification
+  // construct our HTTP POST request
   var requestOptions = {
     method: 'POST',
-    url: 'https://api-int.respoke.io/v1/push-notification/' + encodeURIComponent(event.pushNotificationId),
+    url: 'https://api.respoke.io/v1/push-notification/' + encodeURIComponent(event.pushNotificationId),
     headers: {
       'App-Secret': config.appSecret
     },
@@ -71,10 +77,13 @@ app.post('/', function (req, res) {
     }
   };
 
+  // append the cacheId, if needed.
+  // if it was present in the original event, it is required.
   if (event.cacheId) {
     requestOptions.json.cacheId = event.cacheId;
   }
 
+  // dispatch the push notification
   request(requestOptions, function (err, response) {
     if (err) {
       console.error('error sending push notification:', err);
