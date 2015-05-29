@@ -3,7 +3,7 @@
   "description": "A sample server for receiving webhook events from Respoke and responding to push notification events",
   "keywords": [ "Respoke" ],
   "website": "https://www.respoke.io",
-  "repository": "https://github.com/chadxz/sample-push-server",
+  "repository": "https://github.com/respoke/sample-push-server",
   "logo": "http://community.respoke.io/uploads/db2818/10/2f9b5ce409f806e0.png",
   "env": {
     "APP_SECRET": {
