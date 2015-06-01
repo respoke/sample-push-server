@@ -1,6 +1,6 @@
 #Respoke sample push server
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/chadxz/sample-push-server)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/respoke/sample-push-server)
 
 ## Overview
 Respoke push notifications are awesome, because you can get up and running easily without needing any backend components!
