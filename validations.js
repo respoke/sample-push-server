@@ -17,7 +17,6 @@ var pushEventSchema = Joi.object().keys({
       .when('header.type', { is: ['message', 'signal'], then: Joi.required() })
   }),
   pushNotificationId: Joi.string(),
-  cacheId: Joi.string().optional(),
   config: Joi.object()
 });
 
