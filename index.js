@@ -77,12 +77,6 @@ app.post('/', function (req, res) {
     }
   };
 
-  // append the cacheId, if needed.
-  // if it was present in the original event, it is required.
-  if (event.cacheId) {
-    requestOptions.json.cacheId = event.cacheId;
-  }
-
   // dispatch the push notification
   request(requestOptions, function (err, response) {
     if (err) {
